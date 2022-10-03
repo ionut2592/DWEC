@@ -1,0 +1,37 @@
+<!--Genera un array de 100 números aleatoris sencers entre 0 i 9. Fes que siguen 0 totes les caselles des
+de la 25 fins a la 75.-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var min = 0;
+        var max = 9;
+        var enteros = [];
+
+
+
+        for (let i = 0; i < 100; i++) {
+            var entero = Math.floor(Math.random() * (max - min + 1) + min);
+          if(i<25 || i>75){
+            enteros[i]=entero;
+          }
+          else{
+            enteros[i]=0;
+          }
+
+        }
+
+
+        console.log(enteros);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!-- Bingo-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var vec_num = [0, 3, 6];
+
+    let matriu_bingo = [[], [], []];
+    let matriu_numero = [];
+
+    function generarBingo() {
+      for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 9; j++) {
+          if (vec_num.includes(j) && i == 0) {
+            matriu_bingo[i][j] = 'X';
+          } else if (vec_num.includes(j - 1) && i == 1) {
+            matriu_bingo[i][j] = 'X';
+          } else if (vec_num.includes(j - 2) && i == 2) {
+            matriu_bingo[i][j] = 'X';
+          } else {
+            let min = j * 10;
+            let max = min + 9;
+            var num = generarNumero(min, max);
+            if (i === 1) {
+              matriu_bingo[i][j] = num;
+            } else if (i === 2) {
+              matriu_bingo[i][j] = num;
+            } else {
+              matriu_bingo[i][j] = num;
+            }
+          }
+        }
+      }
+    }
+
+    function generarNumero(min, max) {
+      let valor = Math.floor(Math.random() * (max - min)) + min;
+
+      if (matriu_numero.length != 0) {
+        if (!matriu_numero.includes(valor)) {
+          matriu_numero.push(valor);
+        } else {
+          valor = Math.floor(Math.random() * (max - min)) + min;
+          matriu_numero.push(valor);
+        }
+      } else {
+        matriu_numero.push(valor);
+      }
+
+      return valor;
+    }
+    function generarBolas() {
+      let min = 0;
+      let max = 89;
+      let bolas = [];
+      let valor = Math.floor(Math.random() * (max - min)) + min;
+
+      if (bolas.length != 0) {
+        if (!bolas.includes(valor)) {
+          bolas.push(valor);
+        } else {
+          valor = Math.floor(Math.random() * (max - min)) + min;
+          bolas.push(valor);
+        }
+      } else {
+        bolas.push(valor);
+      }
+
+      return valor;
+    }
+    function jugar() {
+
+      generarBingo();
+      var copia_matriu = Object.values(matriu_bingo);
+
+      let completo = 0;
+      while (completo < 3) {
+        let bol_al = generarBolas();
+
+
+        copia_matriu.forEach(function (element, index, copia_matriu) {
+          let long = element.filter(element => element === "X");
+          let indexo = element.indexOf(bol_al);
+          if (indexo === -1) {
+
+
+          }
+          else if (indexo !== -1) {
+            element[indexo] = "X";
+            let long = element.filter(element => element === "X");
+            if (long.length === 9) {
+
+              if (completo === 1) {
+                console.log("LINIA");
+              }
+              else if (completo === 3) {
+                console.log("LINIA");
+              }
+              else {
+                console.log("LINIA");
+              }
+
+              completo++;
+
+            }
+
+          }
+        }
+        )
+
+
+
+      }
+      console.log(copia_matriu);
+      console.log("BINGO");
+
+
+
+
+    }
+
+    jugar();
+
+
+
+  </script>
+</body>
+
+</html>

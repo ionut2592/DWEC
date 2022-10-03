@@ -1,0 +1,47 @@
+<!--Genera un vector amb noms d’animals. Demana per pantalla a l’usuari que introduisca un nom i
+determina si existeix al vector o no amb includes().-->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Nombre Animales/title>
+    <meta charset="utf-8">
+
+    <style type="text/css">
+        label {
+            display: block;
+            margin: 5px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        let animales = ["gato", "perro", "leon", "burro", "caballo"]
+
+
+        function comprobarNombre() {
+            let animal = document.getElementById("nombreAnimales").value;
+            if (!animales.includes(animal)) {
+                alert('El animal ' + animal + ' introducido no existe ');
+            }
+            else { alert('El animal ' + animal + ' existe '); }
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+
+    <h2>Nombre animales</h2>
+
+    <label>Nombre:<input id="nombreAnimales" type="text" /></label>
+
+    <button type="button" onclick="comprobarNombre()">Comprobar</button>
+
+
+
+</body>
+
+</html>

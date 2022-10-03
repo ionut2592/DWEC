@@ -1,0 +1,31 @@
+<!--Crea una matriu de 3 files i 5 columnes. El contingut de les cel·les ha de ser un indicador de la fila i la
+columna de manera que la primera fila quede f1c1, f1c2, f1c3...
+Recorre tota la matriu empalmant dos forEach() i mostra el resultat en consola -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let vec = [
+            ['f1c1', 'f1c2', 'f1c3', 'f1c4', 'f1c5'],
+            ['f2c1', 'f2c2', 'f2c3', 'f2c4', 'f2c5'],
+            ['f3c1', 'f3c2', 'f3c3', 'f4c4', 'f3c5'],
+
+        ];
+
+        vec.forEach(function e(el, index, array) {
+            el.forEach(function c(el1, index1, array1) {
+                console.log(el1);
+            });
+        });
+    </script>
+</body>
+
+</html>

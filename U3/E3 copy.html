@@ -1,0 +1,40 @@
+<!--Repeteix l’exercici anterior però has de crear la matriu a partir de tres files i afegir‑les una a una fent
+ús del mètode push(). -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var min = 0;
+        var max = 9;
+        var enteros = [];
+        var enteros_filter = [];
+
+        for (let i = 0; i < 100; i++) {
+            enteros.push(Math.floor(Math.random() * (max - min + 1) + min));
+        }
+        for (let i = 0; i < 10; i++) {
+            if (i === 0) {
+                enteros_filter[i] = enteros.filter(i => i === 0).length;
+            }
+            else {
+                enteros_filter[i] = enteros.filter(function (value) {
+                    return value === i;
+                }).length;
+            }
+
+        }
+        for (let i = 0; i < 10; i++) {
+            console.log("EL numero " + i + " se repite " + enteros_filter[i]);
+        }
+    </script>
+</body>
+
+</html>

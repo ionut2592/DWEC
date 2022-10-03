@@ -1,0 +1,28 @@
+<!--Genera una matriu on cada fila serà el nom d’un producte i el seu preu en euros. Posa el preu entre
+0 i 100€. Aplica les funcions necessàries per a, a partir d’aquesta matriu, obtindre altra matriu amb
+aquells productes que el seu preu siga major de 75€ i s’haja aplicat una rebaixa del 10%.-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let noms = [["Televisor Xiaomi", 400], ["Yogur", 2], ["Cubata", 10], ["Portatil", 500], ["Cable C", 5]];
+        var precios = [];
+
+        precios = noms.filter(element => element[1] > 75);
+        precios = precios.map(element => [element[0], element[1] * 0.9]);
+
+
+        console.log(precios);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!--Genera un array de 25 números aleatoris sencers entre 0 i 100. Cap número es pot repetir. Mostra el
+resultat per consola. -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var min = 0;
+        var max = 100;
+        var enteros = [];
+
+
+
+        for (let i = 0; i < 25; i++) {
+            var entero = Math.floor(Math.random() * (max - min + 1) + min);
+            if (enteros.indexOf(entero) == -1) {
+                enteros[i] = entero;
+            }
+            else {
+                var entero = Math.floor(Math.random() * (max - min + 1) + min);
+                if (enteros.indexOf(entero) == -1) {
+                    enteros[i] = entero;
+                }
+            }
+
+        }
+
+
+        console.log(enteros);
+    </script>
+</body>
+
+</html>
